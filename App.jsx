@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+// noinspection JSUnresolvedReference
+
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -28,7 +30,7 @@ import {
 
 import SQLite from 'react-native-sqlite-storage';
 
-const Test = () => {
+const Test = ({id, nm}) => {
   return <Text>Test</Text>;
 };
 
@@ -46,15 +48,15 @@ const App = () => {
         console.log('불러오기 성공');
         setdb(db);
         DB.transaction(tx => {
-          console.log('test1');
-
           tx.executeSql('SELECT * FROM test;', [], (tx, results) => {
-            console.log('test2');
-            console.log(tx, results);
+            // console.log(tx);
+            // console.log(results);
             const rows = results.rows;
-            console.log('rows');
             for (let i = 0; i < rows.length; i++) {
-              console.log(rows.item(i));
+              // console.log(rows.item(i));
+              const test_id = rows.item(i).test_id;
+              const test_user_nm = rows.item(i).test_user_nm;
+              console.log(test_id, test_user_nm);
             }
           });
         });
