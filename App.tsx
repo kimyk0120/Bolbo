@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -5,7 +6,7 @@
  * @format
  */
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -25,94 +26,98 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import SQLite from 'react-native-sqlite-storage';
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
 function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  // console.log('transaction');
+  // dbi.dbi.transaction((tx: any) => {
+  //   tx.executeSql('SELECT * FROM test;', [], (tx: any, results: any) => {
+  //     const rows = results.rows;
+  //     console.log('rows');
+  //     for (let i = 0; i < rows.length; i++) {
+  //       console.log(rows.item(i));
+  //     }
+  //   });
+  // });
+
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View>
+      <Text>{title}</Text>
+      <Text>{children}</Text>
     </View>
   );
 }
 
+let db: any;
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const [dbi, setdb] = useState();
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  useEffect(() => {
+    db = SQLite.openDatabase(
+      {
+        name: 'testlocal.db',
+        location: 'default',
+        createFromLocation: '~www/testlocal.db',
+      },
+      () => {
+        console.log('불러오기 성공');
+        setdb(db);
+        db.transaction((tx: any) => {
+          tx.executeSql('SELECT * FROM test;', [], (tx: any, results: any) => {
+            const rows = results.rows;
+            console.log('rows');
+            for (let i = 0; i < rows.length; i++) {
+              console.log(rows.item(i));
+            }
+          });
+        });
+      },
+      error => {
+        console.log('에러발생: ', error);
+      },
+    );
+  }, []);
+
+  // const db = SQLite.openDatabase(
+  //   {
+  //     name: 'testlocal.db',
+  //     location: 'default',
+  //     createFromLocation: '~www/testlocal.db',
+  //   },
+  //   () => {
+  //     console.log('&& sqlite success');
+  //   },
+  //   error => {
+  //     console.log('&& sqlite error');
+  //     console.log(error);
+  //   },
+  // );
+  //
+  // db.transaction(tx => {
+  //   tx.executeSql('SELECT * FROM test;', [], (tx, results) => {
+  //     const rows = results.rows;
+  //     console.log('rows');
+  //     for (let i = 0; i < rows.length; i++) {
+  //       console.log(rows.item(i));
+  //     }
+  //   });
+  // });
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+    <SafeAreaView>
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
         <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
+        <View>
+          <Section title="Step One" />
           <LearnMoreLinks />
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
