@@ -2,6 +2,11 @@
 
 
 
+### DONE 
+  - IOS-SQLite 연동 테스트
+
+### TODO 
+  - Android-SQLite 연동 테스트
 
 ### TIP
 
