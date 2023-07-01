@@ -113,7 +113,7 @@ const App = () => {
     // open database and execute sql
     db = SQLite.openDatabase(
       {
-        name: 'test2.db', // db 파일은 test.db, 파라미터명은 table 명으로 해야함
+        name: 'test2.db', // db 파일은 test.db, 파라미터명은 table 명으로 해야함, 안드로이드는 따로 파일복사가 아니라 자동적으로 내부에 생성되는듯.
         location: 'default', // www
       },
       DB => {
