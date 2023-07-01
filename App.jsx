@@ -33,9 +33,9 @@ import SQLite from 'react-native-sqlite-storage';
 
 const Test = ({db}) => {
   return (
-    <Text>
+    <View>
       <Button
-        title={'test'}
+        title={'READ ALL'}
         onPress={() => {
           console.log(db);
           db.transaction(
@@ -51,13 +51,11 @@ const Test = ({db}) => {
                   console.log(
                     'execute success transaction: ' + JSON.stringify(tx),
                   );
-                  // const rows = results.rows;
-                  //
-                  // for (let i = 0; i < rows.length; i++) {
-                  //   const test_id = rows.item(i).test_id;
-                  //   const test_user_nm = rows.item(i).test_user_nm;
-                  //   console.log(test_id, test_user_nm);
-                  // }
+                  const rows = results.rows;
+
+                  for (let i = 0; i < rows.length; i++) {
+                    console.log(rows.item(i));
+                  }
                 },
                 error => {
                   console.log('execute error: ' + error.message);
@@ -70,7 +68,40 @@ const Test = ({db}) => {
           );
         }}
       />
-    </Text>
+      <Button
+        title={'INSERT'}
+        onPress={() => {
+          console.log('test');
+          const insertQuery =
+            "INSERT INTO test (value) values ('test@test.com');";
+          db.transaction(
+            tx => {
+              console.log('transaction', tx);
+              tx.executeSql(
+                insertQuery,
+                [],
+                (tx, results) => {
+                  console.log(
+                    'execute success results: ' + JSON.stringify(results), // 실행은 되긴 하나 로우가 3개 있어야 되는데 없음 ..
+                  );
+                  console.log(
+                    'execute success transaction: ' + JSON.stringify(tx),
+                  );
+                },
+                error => {
+                  console.log('execute error: ' + error.message);
+                },
+              );
+            },
+            error => {
+              console.log('transaction error: ' + error.message);
+            },
+          );
+        }}
+      />
+      {/*<Button title={'UPDATE'} />*/}
+      {/*<Button title={'DELETE'} />*/}
+    </View>
   );
 };
 
@@ -82,12 +113,36 @@ const App = () => {
     // open database and execute sql
     db = SQLite.openDatabase(
       {
-        name: 'test.db', // db 파일은 test.db, 파라미터명은 table 명으로 해야함
+        name: 'test2.db', // db 파일은 test.db, 파라미터명은 table 명으로 해야함
         location: 'default', // www
       },
       DB => {
         console.log('불러오기 성공');
         console.log(DB);
+        const query = `CREATE TABLE IF NOT EXISTS test(value TEXT NOT NULL);`;
+        DB.transaction(
+          tx => {
+            console.log('transaction', tx);
+            tx.executeSql(
+              query,
+              [],
+              (tx, results) => {
+                console.log(
+                  'execute success results: ' + JSON.stringify(results), // 실행은 되긴 하나 로우가 3개 있어야 되는데 없음 ..
+                );
+                console.log(
+                  'execute success transaction: ' + JSON.stringify(tx),
+                );
+              },
+              error => {
+                console.log('execute error: ' + error.message);
+              },
+            );
+          },
+          error => {
+            console.log('transaction error: ' + error.message);
+          },
+        );
         setdb(DB);
       },
       error => {
