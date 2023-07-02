@@ -11,6 +11,8 @@ https://hykwon8952.atlassian.net/jira/software/projects/UCFQ/boards/1
 ### TODO 
   
 * 영상, 이미지 각각 어플에서 갤러리의 경로만 가져와서 쓸 수 있나 아니면 copy인지 확인
+* 로컬 디비 설계 ERD 
+* 피그마 샘플 
 * 이미지 뷰어 구현
 * 영상 재생 확인 
 * 문제 목록 화면
