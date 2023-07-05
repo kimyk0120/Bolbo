@@ -119,7 +119,7 @@ const App = () => {
       DB => {
         console.log('불러오기 성공');
         console.log(DB);
-        const query = `CREATE TABLE IF NOT EXISTS test(value TEXT NOT NULL);`;
+        const query = 'CREATE TABLE IF NOT EXISTS test(value TEXT NOT NULL);';
         DB.transaction(
           tx => {
             console.log('transaction', tx);
