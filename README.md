@@ -1,7 +1,10 @@
 # BOLBO
 
+--- 
 
 ### [JIRA](https://hykwon8952.atlassian.net/jira/software/projects/UCFQ/boards/1)
+
+
 
 ### DONE 
   - IOS-SQLite 연동 테스트
@@ -43,7 +46,14 @@
     + 나의 해답 (AI, 그린것, 대기)
 * 홀더 세그멘테이션 추 출 인퍼런스 모델 확인 & 리스크 확인     
 
-### TIP
+###  TIP & REFERENCE
 
-- [SQLite 설정](https://kyungyeon.dev/posts/79)  
+* [SQLite 설정](https://kyungyeon.dev/posts/79)  
 * [React-Native 프로젝트 기본구조](https://jake-seo-dev.tistory.com/233)
+* [React-Native 구조 구성](https://krworker.com/react-native-%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EA%B5%AC%EC%84%B1%ED%95%B4%EB%B3%B4%EC%9E%90/)
+* [React-Native 구조 구성2](https://dipsiiiiiiiiii.wordpress.com/2021/10/09/react-native-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0/)
+* [React-Native 동작 방식](https://firework-ham.tistory.com/117)
+* [React-Native 동작 방식2](https://ssollacc.tistory.com/14)
+* [React-Native 동작 방식3](https://www.yeummy-blog.com/post/80285a63-730b-4cd7-94eb-399af12b994e)
+* [React-Native 네이티브 모듈 생성 예시](https://defineall.tistory.com/1236#toc1)
+
