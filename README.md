@@ -13,6 +13,10 @@ https://hykwon8952.atlassian.net/jira/software/projects/UCFQ/boards/1
 * 영상, 이미지 각각 어플에서 갤러리의 경로만 가져와서 쓸 수 있나 아니면 copy인지 확인
   - 안드로이드 기기 빌드 
     - 실행 ``` $ yarn android ```
+  - 갤러리 사용 방법 검토
+  - [참고1](https://velog.io/@onedanbee/react-native-%EA%B0%A4%EB%9F%AC%EB%A6%AC-%EC%82%AC%EC%A7%84-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0-react-native-communitycameraroll-%EC%82%AC%EC%9A%A9)
+  - [참고2](https://devbksheen.tistory.com/entry/React-Native-%EC%97%85%EB%A1%9C%EB%93%9C%ED%95%A0-%EC%82%AC%EC%A7%84-%EC%84%A0%ED%83%9D-%EB%98%90%EB%8A%94-%EC%B9%B4%EB%A9%94%EB%9D%BC-%EC%B4%AC%EC%98%81%ED%95%98%EA%B8%B0) 
+ 
   
 * 로컬 디비 설계 ERD 
 * 피그마 샘플 
