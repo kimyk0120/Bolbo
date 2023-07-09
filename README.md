@@ -1,8 +1,7 @@
 # BOLBO
 
 
-### JIRA
-https://hykwon8952.atlassian.net/jira/software/projects/UCFQ/boards/1
+### [JIRA](https://hykwon8952.atlassian.net/jira/software/projects/UCFQ/boards/1)
 
 ### DONE 
   - IOS-SQLite 연동 테스트
@@ -46,5 +45,5 @@ https://hykwon8952.atlassian.net/jira/software/projects/UCFQ/boards/1
 
 ### TIP
 
-- SQLite 설정 
-  - https://kyungyeon.dev/posts/79
+- [SQLite 설정](https://kyungyeon.dev/posts/79)  
+* [React-Native 프로젝트 기본구조](https://jake-seo-dev.tistory.com/233)
