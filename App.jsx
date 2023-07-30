@@ -11,7 +11,7 @@ const App = () => {
   return (
     <NavigationContainer>
       {/*  Stack Navigator 가장 첫 Element 빌드앱의 첫화면에 노출됨 */}
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown: true}}>
         <Stack.Screen name="MissionList" component={MissionList} />
         <Stack.Screen name="StartScreen" component={StartScreen} />
       </Stack.Navigator>
