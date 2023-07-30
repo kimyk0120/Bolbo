@@ -1,38 +1,73 @@
-/* eslint-disable */
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {
+  Image,
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
+import * as S from './MissionListCss';
 
-export default function MissionList({navigation}) {
+function MissionCell() {
   return (
-    <View style={styles.container}>
-      <View style={styles.upperImage}>
-        <Text>이미지 영역</Text>
-      </View>
-      <View style={styles.missionCreateBtn}>
-        <Text>New 미션 생성 버튼 영역</Text>
-      </View>
-      <View style={styles.missionListContainer}>
-        <Text>미션 리스트</Text>
-      </View>
+    <View
+      style={{
+        margin: 10,
+        height: 80,
+        backgroundColor: 'yellow',
+        borderRadius: 10,
+      }}>
+      <TouchableOpacity
+        style={{
+          paddingRight: 10,
+          height: '100%',
+          width: '95%',
+          backgroundColor: 'orange',
+          borderTopLeftRadius: 10,
+          borderBottomLeftRadius: 10,
+        }}>
+        <Text style={{position: 'absolute', left: '5%', top: '10%'}}>
+          과제이름
+        </Text>
+        <Text style={{position: 'absolute', right: '5%', bottom: '10%'}}>
+          2020.20.20
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-  },
-  upperImage: {
-    flex: 1,
-    backgroundColor: 'orange',
-  },
-  missionCreateBtn: {
-    flex: 1,
-    backgroundColor: 'green',
-  },
-  missionListContainer: {
-    flex: 1,
-    backgroundColor: 'blue',
-  },
-});
+export default function MissionList({navigation}) {
+  return (
+    <S.StyledContainer>
+      {/* 상단 이미지 */}
+      <S.StyledUpperImageContainer>
+        <Image
+          source={require('../../assets/images/testImage.jpeg')}
+          style={{
+            width: '100%',
+            height: '100%',
+            resizeMode: 'cover',
+          }}></Image>
+      </S.StyledUpperImageContainer>
+      {/* 미션 생선 버튼*/}
+      <S.StyledMissionCreateBtnContainer>
+        <S.MissionCreateBtn onPress={() => alert('test')}>
+          <S.MissionCreateBtnText>새로운 과제 생성</S.MissionCreateBtnText>
+        </S.MissionCreateBtn>
+      </S.StyledMissionCreateBtnContainer>
+      {/* 미션 목록 */}
+      <S.StyledMissionListContainer>
+        <MissionCell />
+        <MissionCell />
+        <MissionCell />
+        <MissionCell />
+        <MissionCell />
+        <MissionCell />
+        <MissionCell />
+        <MissionCell />
+      </S.StyledMissionListContainer>
+    </S.StyledContainer>
+  );
+}
