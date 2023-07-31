@@ -9,11 +9,12 @@
 ### DONE 
   - IOS-SQLite 연동 테스트
   - Android-SQLite 연동 테스트
+  - React Navigation 적용
+  - 과제 리스트 화면 레이아웃
 
 ### TODO 
 
-* React Navigation 적용 
-* 리스트 화면 
+
 * 영상, 이미지 각각 어플에서 갤러리의 경로만 가져와서 쓸 수 있나 아니면 copy인지 확인
   - 안드로이드 기기 빌드 
     - 실행 ``` $ yarn android ```
