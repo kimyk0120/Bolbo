@@ -8,6 +8,12 @@ export const StyledUpperImageContainer = styled.View`
   flex: 1;
   background-color: orange;
 `;
+
+export const StyledUpperImage = styled.Image`
+  width: 100%;
+  height: 100%;
+`;
+
 export const StyledMissionCreateBtnContainer = styled.View`
   flex: 1;
   background-color: green;

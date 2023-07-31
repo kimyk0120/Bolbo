@@ -1,27 +1,18 @@
 import React from 'react';
-import {
-  Image,
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
 import * as S from './MissionListCss';
 import MissionCell from './MissionCell';
+import {StyledUpperImage} from './MissionListCss';
 
 export default function MissionList({navigation}) {
+  const upperImage = require('../../assets/images/testImage.jpeg');
+
+  const goMissionCreate = () => {};
+
   return (
     <S.StyledContainer>
       {/* 상단 이미지 */}
       <S.StyledUpperImageContainer>
-        <Image
-          source={require('../../assets/images/testImage.jpeg')}
-          style={{
-            width: '100%',
-            height: '100%',
-            resizeMode: 'cover',
-          }}></Image>
+        <StyledUpperImage source={upperImage}></StyledUpperImage>
       </S.StyledUpperImageContainer>
       {/* 미션 생선 버튼*/}
       <S.StyledMissionCreateBtnContainer>
@@ -31,6 +22,7 @@ export default function MissionList({navigation}) {
       </S.StyledMissionCreateBtnContainer>
       {/* 미션 목록 */}
       <S.StyledMissionListContainer>
+        {/* 셀 단위 */}
         <MissionCell />
         <MissionCell />
         <MissionCell />
