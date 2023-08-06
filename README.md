@@ -13,7 +13,10 @@ React-Native를 이용한 클라이밍 문제 관리 어플리케이션
 --- 
 
 ### 프로젝트 관리 
-[JIRA](https://hykwon8952.atlassian.net/jira/software/projects/UCFQ/boards/1)
+[JIRA](https://hykwon8952.atlassian.net/jira/software/projects/UCFQ/boards/1)  
+[Github](https://github.com/kimyk0120/Bolbo)  
+[Figma](https://www.figma.com/file/wAPPWZlnocTunUK0cwmInE/Bolbo?type=design&node-id=0-1&mode=design&t=pK44iUoz3bqc6gAk-0)  
+[ERD](https://www.erdcloud.com/d/NZRwrWoTLvFvmWfrJ)
 
 --- 
 
