@@ -8,6 +8,7 @@ React-Native를 이용한 클라이밍 문제 관리 어플리케이션
 ### STACK 
 >react-native  
 >sqlite
+>react-native-elements
 
 --- 
 
@@ -17,17 +18,19 @@ React-Native를 이용한 클라이밍 문제 관리 어플리케이션
 --- 
 
 ### DONE 
-  - IOS-SQLite 연동 테스트
-  - Android-SQLite 연동 테스트
-  - React Navigation 적용
-  - 과제 리스트 화면 레이아웃
+* IOS-SQLite 연동 테스트
+* Android-SQLite 연동 테스트
+* React Navigation 적용
+* 과제 리스트 화면 레이아웃
+* UI 라이브러리 선정
+* 피그마 초안
 
 ### TODO 
 
 
 * 로컬 디비 설계 - ERD
 * 문제 목록 화면
-* UI 라이브러리 선정 
+
 * 영상, 이미지 각각 어플에서 갤러리의 경로만 가져와서 쓸 수 있나 아니면 copy인지 확인
   - 안드로이드 기기 빌드 
     - 실행 ``` $ yarn android ```
@@ -37,9 +40,7 @@ React-Native를 이용한 클라이밍 문제 관리 어플리케이션
   - 리액트 fs 검토
     - [참고1](https://dev-yakuza.posstree.com/ko/react-native/react-native-fs/)
  
-  
- 
-* 피그마 샘플 
+
 * 이미지 뷰어 구현
 * 영상 재생 확인 
 
