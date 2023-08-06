@@ -4,9 +4,15 @@ import MissionCell from './MissionCell';
 import {StyledUpperImage} from './MissionListCss';
 
 export default function MissionList({navigation}) {
-  const upperImage = require('../../assets/images/testImage.jpeg');
+  // 상단 이미지
+  const upperImage = require('../../assets/images/Climbing_wall.jpg');
 
-  const goMissionCreate = () => {};
+  // 미션 목록 데이터
+
+  // Navigation
+  const goMissionCreate = () => {
+    navigation.navigate('StartScreen'); // FIXME 문제 생성 화면으로 이동
+  };
 
   return (
     <S.StyledContainer>
@@ -16,7 +22,7 @@ export default function MissionList({navigation}) {
       </S.StyledUpperImageContainer>
       {/* 미션 생선 버튼*/}
       <S.StyledMissionCreateBtnContainer>
-        <S.MissionCreateBtn onPress={() => alert('test')}>
+        <S.MissionCreateBtn onPress={goMissionCreate}>
           <S.MissionCreateBtnText>새로운 과제 생성</S.MissionCreateBtnText>
         </S.MissionCreateBtn>
       </S.StyledMissionCreateBtnContainer>

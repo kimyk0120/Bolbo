@@ -1,10 +1,20 @@
 # BOLBO
 
+```
+React-Native를 이용한 클라이밍 문제 관리 어플리케이션
+```
 --- 
 
-### [JIRA](https://hykwon8952.atlassian.net/jira/software/projects/UCFQ/boards/1)
+### STACK 
+>react-native  
+>sqlite
 
+--- 
 
+### 프로젝트 관리 
+[JIRA](https://hykwon8952.atlassian.net/jira/software/projects/UCFQ/boards/1)
+
+--- 
 
 ### DONE 
   - IOS-SQLite 연동 테스트
@@ -15,6 +25,9 @@
 ### TODO 
 
 
+* 로컬 디비 설계 - ERD
+* 문제 목록 화면
+* UI 라이브러리 선정 
 * 영상, 이미지 각각 어플에서 갤러리의 경로만 가져와서 쓸 수 있나 아니면 copy인지 확인
   - 안드로이드 기기 빌드 
     - 실행 ``` $ yarn android ```
@@ -25,11 +38,11 @@
     - [참고1](https://dev-yakuza.posstree.com/ko/react-native/react-native-fs/)
  
   
-* 로컬 디비 설계 ERD 
+ 
 * 피그마 샘플 
 * 이미지 뷰어 구현
 * 영상 재생 확인 
-* 문제 목록 화면
+
 * 문제 목록 empty 화면
 * 문제 등록  
   - 문제 이미지(여러장 가능, 가져오는 거 우선 기술 검토)
