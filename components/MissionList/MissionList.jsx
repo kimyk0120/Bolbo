@@ -11,7 +11,7 @@ export default function MissionList({navigation}) {
 
   // Navigation
   const goMissionCreate = () => {
-    navigation.navigate('StartScreen'); // FIXME 문제 생성 화면으로 이동
+    navigation.navigate('RegistScreen'); // FIXME 문제 생성 화면으로 이동
   };
 
   return (
