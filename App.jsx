@@ -17,6 +17,8 @@ import {
 const Stack = createStackNavigator();
 
 const App = () => {
+  console.log('test');
+
   // open database and create table
   useEffect(() => {
     // open database and execute sql
