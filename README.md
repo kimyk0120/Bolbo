@@ -7,7 +7,7 @@ React-Native를 이용한 클라이밍 문제 관리 어플리케이션
 
 ### STACK 
 >react-native  
->sqlite
+>sqlite  
 >react-native-elements
 
 --- 
